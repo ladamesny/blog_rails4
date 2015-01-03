@@ -1,0 +1,19 @@
+<!-- Notice that you use form_tag instead of form_for, which you used earlier with Active REcord objects;
+that's because session isn't an Active REcord object. You also submit to session_path because it's a resource,
+not resources. Again, because you aren't dealing with an Active REcord object, you use label_tag, text_field_tag
+and password_field_tag helpers. -->
+
+<h1>Login</h1>
+<%= form_tag session_path do %>
+  <div class="field">
+    <%= label_tag :email %> <br />
+    <%= text_field_tag :email %>
+  </div>
+  <div class="field">
+    <%= label_tag :password %> <br />
+    <%= password_field_tag :password %>
+  </div>
+  <div class="actions">
+    <%= submit_tag 'Login' %> <br />
+  </div>
+<% end %>
